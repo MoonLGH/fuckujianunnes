@@ -2,7 +2,6 @@
 
 const GEMINI_API_KEYS = [];
 //useurown
-
 const MODEL_NAME = "gemini-2.5-flash-lite";
 const REQUEST_DELAY_MS = 800;
 
@@ -38,7 +37,7 @@ async function getAnswerFromGemini(pageContent, tabId) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
 
     const fullPrompt = `
-Jawab pertanyaan berikut secara langsung, singkat, dan akurat lalu sertakan isinya, seperti A.CONTOH TEKS 1.
+Jawab pertanyaan berikut secara langsung, singkat, dan akurat, dan karena ini pilihan ganda, sertakan juga isi dari pilihan yang kamu pilih (Contoh : A.17 agustus 1945).
 Konteks:
 ${pageContent.substring(0, 3000)}
 `.trim();
